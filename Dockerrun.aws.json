@@ -1,0 +1,36 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinations": [
+    {
+      "name": "client",
+      "image": "ashskywalker10/multi-client",
+      "hostame": "client",
+      "essential": false
+    },
+    {
+      "name": "server",
+      "image": "ashskywalker10/multi-server",
+      "hostame": "api",
+      "essential": false
+    },
+    {
+      "name": "worker",
+      "image": "ashskywalker10/multi-worker",
+      "hostame": "worker",
+      "essential": false
+    },
+    {
+      "name": "nginx",
+      "image": "ashskywalker10/multi-nginx",
+      "hostname": "nginx",
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": [ "client", "server" ]
+    }
+  ]
+}
