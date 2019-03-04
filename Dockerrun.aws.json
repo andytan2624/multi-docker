@@ -5,25 +5,29 @@
       "name": "client",
       "image": "ashskywalker10/multi-client",
       "hostame": "client",
-      "essential": false
+      "essential": false,
+      "memory": 128
     },
     {
       "name": "server",
       "image": "ashskywalker10/multi-server",
       "hostame": "api",
-      "essential": false
+      "essential": false,
+      "memory": 128
     },
     {
       "name": "worker",
       "image": "ashskywalker10/multi-worker",
       "hostame": "worker",
-      "essential": false
+      "essential": false,
+      "memory": 128
     },
     {
       "name": "nginx",
       "image": "ashskywalker10/multi-nginx",
       "hostname": "nginx",
       "essential": true,
+      "memory": 128,
       "portMappings": [
         {
           "hostPort": 80,
