@@ -5,6 +5,9 @@ services:
 before_install:
   - docker build -t ashskywalker10/react-test -f ./client/Dockerfile.dev ./client
 
+script:
+  - docker run ashskywalker10/react-test
+
 after_success:
   - docker build -t ashskywalker10/multi-client ./client
   - docker build -t ashskywalker10/multi-nginx ./nginx
